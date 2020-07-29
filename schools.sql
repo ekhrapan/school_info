@@ -1,0 +1,6 @@
+CREATE TABLE schools (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(50) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+);
