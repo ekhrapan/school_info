@@ -1,8 +1,8 @@
 package academy.belhard;
 
-import academy.belhard.db.SchoolConnector;
-import academy.belhard.entity.School;
-import academy.belhard.reader.SchoolReader;
+import academy.belhard.db.PupilConnector;
+import academy.belhard.entity.Pupil;
+import academy.belhard.reader.PupilReader;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,14 +12,14 @@ import static academy.belhard.reader.ReaderConstants.PUPILS_IMPORT_FILE;
 public class Main {
 
     public static void main(String[] args) {
-        SchoolReader schoolReader = new SchoolReader(PUPILS_IMPORT_FILE);
-        List<School> schools = schoolReader.readSchools();
+        PupilReader pupilReader = new PupilReader(PUPILS_IMPORT_FILE);
+        List<Pupil> pupils = pupilReader.readPupils();
 
-        System.out.println(schools);
+        System.out.println(pupils);
 
-        for (School school : schools) {
+        for (Pupil pupil : pupils) {
             try {
-                SchoolConnector.add(school);
+                PupilConnector.add(pupil);
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -41,6 +41,6 @@ public class School {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", city='" + city + '\'' +
-                '}';
+                "}\n";
     }
 }
